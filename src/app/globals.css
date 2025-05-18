@@ -22,5 +22,279 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add transition classes for content loading */
+.content-loaded .animate-on-load {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.content-loaded .slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.content-loaded .slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Circuit background styles */
+canvas.circuit-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* Loading screen animations */
+@keyframes pulse-dots {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes move-along-path {
+  0% {
+    offset-distance: 0%;
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    offset-distance: 100%;
+    opacity: 0.9;
+  }
+}
+
+@keyframes circuit-pulse {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke-width: 1;
+    opacity: 0.5;
+  }
+
+  50% {
+    stroke-width: 2;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+    opacity: 0.5;
+  }
+}
+
+@keyframes node-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5));
+    transform: scale(1);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8));
+    transform: scale(1.2);
+  }
+}
+
+@keyframes data-transfer {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -1000;
+    opacity: 0.2;
+  }
+}
+
+.animate-circle-reveal {
+  animation: circle-reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes circle-reveal {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Navbar animations and transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Staggered animations for nav items */
+.nav-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Morphing blob effects */
+@keyframes blurAnimation {
+  0% {
+    filter: blur(15px);
+  }
+
+  50% {
+    filter: blur(20px);
+  }
+
+  100% {
+    filter: blur(15px);
+  }
+}
+
+.blob-effect {
+  filter: blur(15px);
+  animation: blurAnimation 8s infinite alternate;
+  mix-blend-mode: multiply;
+}
+
+/* Custom shimmer effect */
+.shimmer-effect {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Improved background gradient in dark mode */
+@media (prefers-color-scheme: dark) {
+  .morphing-blob {
+    opacity: 0.15;
+  }
+}
+
+/* Text shadow utility classes */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dark .text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dark .text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dark .text-shadow-lg {
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
