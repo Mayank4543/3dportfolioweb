@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export function generateMetadata({ params }) {
   // This could fetch project details from a database in a real implementation
@@ -54,14 +54,13 @@ export default function ProjectDetail({ params }) {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-2xl font-semibold">Project Overview</h2>
+          <h2 className="text-2xl font-semibold">Project Overview</h2>{" "}
           <p className="text-lg text-gray-700 dark:text-gray-300">
             This is a detailed view of the {projectId.split("-").join(" ")}{" "}
             project. In a real implementation, this would contain comprehensive
-            information about the project's goals, technologies used, challenges
-            faced, and solutions implemented.
+            information about the project&apos;s goals, technologies used,
+            challenges faced, and solutions implemented.
           </p>
-
           <h2 className="text-2xl font-semibold">Technologies Used</h2>
           <div className="flex flex-wrap gap-2">
             <span className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">
