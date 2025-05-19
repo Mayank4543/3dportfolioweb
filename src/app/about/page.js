@@ -18,9 +18,10 @@ export default function About() {
           Tailwind CSS.
         </p>
         <p className="text-lg">
-          My journey in tech began several years ago, and I've been constantly
-          learning and improving my skills to deliver high-quality solutions to
-          my clients and teams.
+          {" "}
+          My journey in tech began several years ago, and I&apos;ve been
+          constantly learning and improving my skills to deliver high-quality
+          solutions to my clients and teams.
         </p>
       </div>
     </div>

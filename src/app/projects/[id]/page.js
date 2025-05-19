@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function generateMetadata({ params }) {
   // This could fetch project details from a database in a real implementation
   // Here we'll just create a title based on the project ID
@@ -17,10 +19,7 @@ export default function ProjectDetail({ params }) {
   const projectId = params.id;
 
   return (
-    <div className="min-h-screen pt-24 px-8 pb-20 sm:px-20">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <a
+    <div className="min-h-scre          <Link
             href="/projects"
             className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200 inline-flex items-center"
           >
@@ -38,6 +37,8 @@ export default function ProjectDetail({ params }) {
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
+            Back to Projects
+          </Link>svg>
             Back to Projects
           </a>
         </div>
