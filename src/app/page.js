@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Home",
+  description: "Welcome to my portfolio - showcasing my projects and skills",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen pt-24 px-8 pb-20 sm:px-20">
@@ -8,7 +13,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:items-center">
           <div className="md:w-1/2 mb-12 md:mb-0">
             <h1 className="text-5xl font-bold mb-6 animate-fadeIn">
-              <span className="block">Hello, I'm</span>
+              <span className="block">Hello, I&apos;m</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
                 Sevya Portfolio
               </span>

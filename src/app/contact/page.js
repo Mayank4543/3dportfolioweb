@@ -42,7 +42,7 @@ export default function Contact() {
       <div className="max-w-lg mx-auto">
         {submitted ? (
           <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded animate-fade-in">
-            <p>Thank you for your message! I'll get back to you soon.</p>
+            <p>Thank you for your message! I&apos;ll get back to you soon.</p>
           </div>
         ) : null}
 

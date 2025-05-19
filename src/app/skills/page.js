@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Skills",
+  description:
+    "Explore my technical skills and expertise in various technologies",
+};
+
 export default function Skills() {
   const skills = [
     { name: "HTML & CSS", level: 90 },

@@ -16,7 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SevyaPort - Portfolio",
+  title: {
+    template: "%s | SevyaPort",
+    default: "SevyaPort - Portfolio",
+  },
   description: "A professional portfolio showcasing my skills and projects",
 };
 

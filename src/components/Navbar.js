@@ -125,8 +125,8 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          {/* Desktop Navigation */}{" "}
+          <div className="hidden md:flex items-center space-x-8">
             <NavItem
               href="/"
               label="Home"
@@ -140,16 +140,22 @@ const Navbar = () => {
               navIndex={2}
             />
             <NavItem
+              href="/projects"
+              label="Projects"
+              isActive={pathname.startsWith("/projects")}
+              navIndex={3}
+            />
+            <NavItem
               href="/skills"
               label="Skills"
               isActive={pathname === "/skills"}
-              navIndex={3}
+              navIndex={4}
             />
             <NavItem
               href="/contact"
               label="Contact"
               isActive={pathname === "/contact"}
-              navIndex={4}
+              navIndex={5}
             />
           </div>
           {/* Mobile menu button */}
@@ -189,8 +195,7 @@ const Navbar = () => {
       >
         <div className="px-4 sm:px-6 lg:px-8 py-2 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg relative transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-8'}">
           {/* Overlay for dropdown to ensure text visibility */}
-          <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md -z-10"></div>
-
+          <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md -z-10"></div>{" "}
           <MobileNavItem
             href="/"
             label="Home"
@@ -206,11 +211,18 @@ const Navbar = () => {
             navIndex={2}
           />
           <MobileNavItem
+            href="/projects"
+            label="Projects"
+            isActive={pathname.startsWith("/projects")}
+            onClick={() => setIsOpen(false)}
+            navIndex={3}
+          />
+          <MobileNavItem
             href="/skills"
             label="Skills"
             isActive={pathname === "/skills"}
             onClick={() => setIsOpen(false)}
-            navIndex={3}
+            navIndex={4}
           />
           <MobileNavItem
             href="/contact"

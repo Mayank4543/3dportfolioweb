@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "About Me",
+  description: "Learn about my background, skills, and professional journey",
+};
+
 export default function About() {
   return (
     <div className="min-h-screen pt-24 px-8 pb-20 sm:p-20">
