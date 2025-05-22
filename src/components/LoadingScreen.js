@@ -37,12 +37,13 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <div className="relative w-40 h-20 animate-pulse">
+            {" "}
             <Image
               src="/logo.svg"
               alt="SevyaPort Logo"
-              layout="fill"
-              objectFit="contain"
-              className="dark:invert"
+              fill
+              className="object-contain dark:invert"
+              sizes="(max-width: 768px) 100vw, 160px"
             />
           </div>
         </div>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const pageTitles = {
   "/": "Home",
-  "/about": "About Me",
+  "/about": "",
   "/skills": "Skills",
   "/contact": "Contact Me",
   "/projects": "Projects",

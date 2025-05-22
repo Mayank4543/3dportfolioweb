@@ -1,0 +1,75 @@
+"use client";
+import React from "react";
+import Lottie from "react-lottie";
+import animationData from "../../../public/Life-1.json"; // Download & place the Lottie JSON file here
+
+export default function AboutSection() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  return (
+    <section className="w-full bg-[#001328] text-white px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="w-full md:w-1/2">
+        <div className="mb-4 text-teal-300 uppercase tracking-wide font-semibold">
+          Culture
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          The three C’s of craftery
+        </h2>
+        <div className="space-y-6 text-lg text-gray-300">
+          <div>
+            <h4 className="text-xl font-semibold text-white">Chemistry</h4>
+            <p>
+              Be it between people, products, or experiences; our way of life is
+              sparked by the catalytic connections that make up our
+              collaborative atmosphere.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-xl font-semibold text-white">Curiosity</h4>
+            <p>
+              We thrive in the freedom of our open-mindedness. We inspire,
+              support, and learn from one another.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-xl font-semibold text-white">
+              Creative turbulence
+            </h4>
+            <p>
+              Our approach is that of hungry inventors, propelled by our shared
+              instinct to break boundaries and shake things up.
+            </p>
+          </div>
+        </div>
+        <a
+          href="/our-craft"
+          className="inline-flex mt-8 items-center text-[#6fffdb] border-b-2 border-[#6fffdb] hover:text-white hover:border-white transition-all"
+        >
+          See work
+          <svg
+            className="ml-2 w-4 h-4 transform rotate-90"
+            viewBox="0 0 16 13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m14.13 7.98-1.56-1.52-3.46 3.41V-1h-2.18v10.88L3.46 6.46 1.9 7.98l6.11 6.02z"
+              fill="#6fffdb"
+              transform="matrix(0 1 1 0 1.53 -1.53)"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div className="w-full md:w-1/2 max-w-md">
+        <Lottie options={defaultOptions} height={400} width={400} />
+      </div>
+    </section>
+  );
+}

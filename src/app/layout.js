@@ -1,9 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
-import CircuitBackground from "../components/CircuitBackground";
+import ModernBackground from "../components/ModernBackground";
 import ClientLayout from "../components/ClientLayout";
 import "./globals.css";
+import "aos/dist/aos.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,8 +56,8 @@ export default function RootLayout({ children }) {
           </filter>
         </svg>
 
-        {/* Circuit animated background */}
-        <CircuitBackground />
+        {/* Modern animated background */}
+        <ModernBackground />
 
         <ClientLayout>
           <Navbar />

@@ -109,7 +109,7 @@ export default function TitleUpdater() {
         ctx.fillText("S", 16, 16);
 
         // Update the favicon
-        existingIcon.href = canvas.toDataURL("image/png");
+        existingIcon.href = canvas.toDataURL("image/pn ? +g");
       }
     } catch (e) {
       // If there's an error, just continue without updating the favicon

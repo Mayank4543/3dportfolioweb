@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Cyberpunk Theme Colors */
+  --cyberpunk-bg: #0f0b30;
+  --cyberpunk-accent1: #00E5FF;
+  --cyberpunk-accent2: #FF1F71;
+  --cyberpunk-accent3: #FFD700;
+  --cyberpunk-accent4: #FF764D;
+  --cyberpunk-text: #f1f1f1;
+  --cyberpunk-grid: #ffffff05;
 }
 
 @theme inline {
@@ -14,8 +23,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--cyberpunk-bg);
+    --foreground: var(--cyberpunk-text);
   }
 }
 
@@ -49,6 +58,168 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+/* Cyberpunk-specific animations */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-15px, 15px) scale(0.95);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-pulse-neon {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: float 6s infinite ease-in-out;
+}
+
+.animate-glow {
+  animation: glow 3s infinite ease-in-out;
+}
+
+.animate-blob {
+  animation: blob 10s infinite ease-in-out;
+}
+
+/* Cyberpunk Theme Animations */
+@keyframes neon-pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes neon-float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+  }
+}
+
+@keyframes cyber-blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-15px, 15px) scale(0.95);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 3s infinite ease-in-out;
+}
+
+.animate-neon-float {
+  animation: neon-float 6s infinite ease-in-out;
+}
+
+.animate-neon-glow {
+  animation: neon-glow 3s infinite ease-in-out;
+}
+
+.animate-cyber-blob {
+  animation: cyber-blob 15s infinite ease-in-out;
+}
+
+.cyberpunk-text-glow {
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.7);
+}
+
+.cyberpunk-border-glow {
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
 .content-loaded .slide-in-up {
@@ -318,4 +489,115 @@ canvas.circuit-background {
 
 .page-title-transition {
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00E5FF, -0.05em -0.025em 0 #FF1F71;
+  }
+
+  14% {
+    text-shadow: 0.05em 0 0 #00E5FF, -0.05em -0.025em 0 #FF1F71;
+  }
+
+  15% {
+    text-shadow: -0.05em -0.025em 0 #00E5FF, 0.025em 0.025em 0 #FF1F71;
+  }
+
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00E5FF, 0.025em 0.025em 0 #FF1F71;
+  }
+
+  50% {
+    text-shadow: 0.025em 0.05em 0 #00E5FF, 0.05em 0 0 #FF1F71;
+  }
+
+  99% {
+    text-shadow: 0.025em 0.05em 0 #00E5FF, 0.05em 0 0 #FF1F71;
+  }
+
+  100% {
+    text-shadow: -0.025em 0 0 #00E5FF, -0.025em -0.025em 0 #FF1F71;
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.5s linear infinite;
+}
+
+.animate-ping-slow {
+  animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+
+  75%,
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-waveSlow {
+  animation: wave 15s linear infinite;
+}
+
+.animate-waveFast {
+  animation: wave 10s linear infinite;
 }
