@@ -1,9 +1,13 @@
 "use client";
-import React from "react";
-import Lottie from "react-lottie";
-import animationData from "../../../public/Life-1.json"; // Download & place the Lottie JSON file here
 
-export default function AboutSection() {
+import React from "react";
+import dynamic from "next/dynamic"; // Import dynamic
+import animationData from "../../../public/Life-1.json";
+
+// Dynamically import Lottie with ssr: false
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+
+export default function AboutValues() {
   const defaultOptions = {
     loop: true,
     autoplay: true,

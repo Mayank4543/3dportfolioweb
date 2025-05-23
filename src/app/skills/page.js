@@ -1,4 +1,4 @@
-import SkillsContent from "@/components/SkillsContent";
+import SkillsContent from "../../components/skills/SkillsContent";
 
 export const metadata = {
   title: "Skills",

@@ -9,7 +9,7 @@ import {
 import Hero from "../components/Hero";
 
 // Import skills data from SkillsContent
-import { skills } from "../components/SkillsContent";
+import { skills } from "../components/skills/SkillsContent";
 import PromiseSection from "@/components/PromiseSection";
 
 export const metadata = {

@@ -8,14 +8,6 @@ export default function SkillsContent() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [animatedItems, setAnimatedItems] = useState(0);
 
-  useEffect(() => {
-    setIsLoaded(true);
-    const timer = setTimeout(() => {
-      setAnimatedItems(skills.length);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   const categories = [
     "All",
     "Frontend",
@@ -110,6 +102,15 @@ export default function SkillsContent() {
       color: "#00E5FF",
     },
   ];
+
+  useEffect(() => {
+    setIsLoaded(true);
+    const timer = setTimeout(() => {
+      setAnimatedItems(skills.length);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [skills.length]);
+
   const filteredSkills =
     activeCategory === "All"
       ? skills

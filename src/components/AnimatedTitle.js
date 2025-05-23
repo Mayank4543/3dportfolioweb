@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 const pageTitles = {
   "/": "Home",
   "/about": "",
-  "/skills": "Skills",
-  "/contact": "Contact Me",
-  "/projects": "Projects",
+  "/skills": "",
+  "/contact": "",
+  "/projects": "",
   // Add more routes as needed
 };
 

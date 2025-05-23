@@ -109,10 +109,9 @@ const Hero = ({ name = "Sanskriti JS" }) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              I'm a passionate full stack developer who crafts digital
-              experiences with a perfect blend of creativity and functionality.
-              With an eye for detail and a love for clean, user-friendly designs
-              & robust architecture.
+              {
+                "I'm a passionate full stack developer who crafts digital experiences with a perfect blend of creativity and functionality. With an eye for detail and a love for clean, user-friendly designs & robust architecture."
+              }
             </motion.p>
 
             <motion.div
