@@ -65,7 +65,7 @@ export default function Contact() {
   const contactMethods = [
     {
       name: "Email",
-      value: "hello@pawangupta.dev",
+      value: "nityasolanki222@gmail.com",
       icon: (
         <motion.svg
           className="w-6 h-6"
@@ -86,6 +86,42 @@ export default function Contact() {
         </motion.svg>
       ),
       color: "#00E5FF",
+    },
+    {
+      name: "LinkedIn",
+      value: "linkedin.com/in/nityasolanki",
+      icon: (
+        <motion.svg
+          className="w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+        >
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.761 0 5-2.238 5-5v-14c0-2.761-2.239-5-5-5zm-11.25 19h-2.5v-9h2.5v9zm-1.25-10.25c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm12.25 10.25h-2.5v-4.5c0-1.104-.896-2-2-2s-2 .896-2 2v4.5h-2.5v-9h2.5v1.264c.563-.843 1.589-1.264 2.5-1.264 1.93 0 3.5 1.7 3.5 3.5v5.5z" />
+        </motion.svg>
+      ),
+      color: "#0077B5",
+    },
+    {
+      name: "GitHub",
+      value: "github.com/nityasolanki",
+      icon: (
+        <motion.svg
+          className="w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+        >
+          <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.6-1.5-1.4-1.9-1.4-1.9-1.2-.8.1-.8.1-.8 1.3.1 2 1.3 2 1.3 1.1 2 2.9 1.4 3.6 1.1.1-.8.4-1.4.7-1.7-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0C18 5.3 19 5.6 19 5.6c.6 1.7.2 3 .1 3.3.8.9 1.2 1.9 1.2 3.1 0 4.5-2.8 5.5-5.4 5.8.4.3.7.9.7 1.9v2.8c0 .3.2.7.8.6A10.9 10.9 0 0023.5 12C23.5 5.7 18.3.5 12 .5z" />
+        </motion.svg>
+      ),
+      color: "#ffffff",
     },
   ];
 
@@ -109,6 +145,33 @@ export default function Contact() {
         }}
         transition={{ type: "spring", damping: 20 }}
       />
+
+      {/* Glowing Stars Background for Left Side */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-[#00E5FF] opacity-50"
+            style={{
+              width: Math.random() * 4 + 2,
+              height: Math.random() * 4 + 2,
+              left: `${Math.random() * 50}%`,
+              top: `${Math.random() * 100}%`,
+              boxShadow: "0 0 10px rgba(0, 229, 255, 0.8)",
+            }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              repeatType: "loop",
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Content Container */}
       <div className="container mx-auto px-4 py-16 relative z-10">
@@ -135,18 +198,18 @@ export default function Contact() {
         {/* Contact Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Left Side - Contact Methods */}
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-6 relative">
+            <div className="flex flex-col gap-4">
               {contactMethods.map((method, i) => (
                 <motion.div
                   key={method.name}
-                  className="bg-[#16123f] p-4 rounded-lg border border-[#16123f] hover:border-[#00E5FF] transition-all"
+                  className="bg-[#16123f] p-4 rounded-lg border border-[#16123f] hover:border-[#00E5FF] transition-all min-h-[100px] flex items-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   whileHover={{ scale: 1.03 }}
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-center gap-3 w-full">
                     <div
                       className="p-2 rounded-md"
                       style={{
@@ -156,7 +219,7 @@ export default function Contact() {
                     >
                       {method.icon}
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="text-gray-400 text-sm">{method.name}</h3>
                       <p className="text-white font-medium">{method.value}</p>
                     </div>
@@ -166,7 +229,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Side - Contact Form */}
+          {/* Right Side - Contact Form Without Right-Side Icons */}
           <motion.form
             onSubmit={handleSubmit}
             className="bg-[#16123f] p-6 rounded-lg space-y-4 border border-[#1c1a45]"

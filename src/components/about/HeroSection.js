@@ -2,10 +2,10 @@
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between bg-gradient-to-tr from-teal-200 to-cyan-300 px-6 py-10 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between bg-gradient-to-tr from-teal-200 to-cyan-300 px-6 md:px-16 py-20 overflow-hidden">
       {/* Text Content */}
-      <div className="w-full md:w-1/2 max-w-xl text-left z-10">
-        <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6">
+      <div className="w-full md:w-1/2 max-w-xl text-left z-10 mb-12 md:mb-0">
+        <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
           About Me
         </h1>
         <p className="text-slate-900 text-lg md:text-xl leading-relaxed">

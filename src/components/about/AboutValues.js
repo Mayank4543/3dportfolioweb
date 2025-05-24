@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic"; // Import dynamic
+import dynamic from "next/dynamic";
 import animationData from "../../../public/Life-1.json";
 
 // Dynamically import Lottie with ssr: false
@@ -18,32 +18,32 @@ export default function AboutValues() {
   };
 
   return (
-    <section className="w-full bg-[#001328] text-white px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-12">
+    <section className="w-full bg-[#001328] text-white px-6 md:px-16 py-24 flex flex-col md:flex-row items-center justify-between gap-12">
       <div className="w-full md:w-1/2">
         <div className="mb-4 text-teal-300 uppercase tracking-wide font-semibold">
-          Culture
+          My Values
         </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-8">
-          The three C’s of craftery
+          The three C&apos;s of craftery
         </h2>
-        <div className="space-y-6 text-lg text-gray-300">
-          <div>
-            <h4 className="text-xl font-semibold text-white">Chemistry</h4>
+        <div className="space-y-8 text-lg text-gray-300">
+          <div className="bg-[#062243] p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+            <h4 className="text-xl font-semibold text-white mb-2">Chemistry</h4>
             <p>
               Be it between people, products, or experiences; our way of life is
               sparked by the catalytic connections that make up our
               collaborative atmosphere.
             </p>
           </div>
-          <div>
-            <h4 className="text-xl font-semibold text-white">Curiosity</h4>
+          <div className="bg-[#062243] p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+            <h4 className="text-xl font-semibold text-white mb-2">Curiosity</h4>
             <p>
               We thrive in the freedom of our open-mindedness. We inspire,
               support, and learn from one another.
             </p>
           </div>
-          <div>
-            <h4 className="text-xl font-semibold text-white">
+          <div className="bg-[#062243] p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+            <h4 className="text-xl font-semibold text-white mb-2">
               Creative turbulence
             </h4>
             <p>
@@ -53,10 +53,10 @@ export default function AboutValues() {
           </div>
         </div>
         <a
-          href="/our-craft"
-          className="inline-flex mt-8 items-center text-[#6fffdb] border-b-2 border-[#6fffdb] hover:text-white hover:border-white transition-all"
+          href="/contact"
+          className="inline-flex mt-10 items-center text-[#6fffdb] border-b-2 border-[#6fffdb] hover:text-white hover:border-white transition-all"
         >
-          See work
+          Contact Me
           <svg
             className="ml-2 w-4 h-4 transform rotate-90"
             viewBox="0 0 16 13"
@@ -71,8 +71,10 @@ export default function AboutValues() {
         </a>
       </div>
 
-      <div className="w-full md:w-1/2 max-w-md">
-        <Lottie options={defaultOptions} height={400} width={400} />
+      <div className="w-full md:w-1/2 max-w-md mt-10 md:mt-0">
+        <div className="bg-[#062243] p-4 rounded-lg shadow-lg">
+          <Lottie options={defaultOptions} height={400} width={400} />
+        </div>
       </div>
     </section>
   );

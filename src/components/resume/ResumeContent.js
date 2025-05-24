@@ -532,7 +532,7 @@ const ResumeContent = () => {
                 </div>
 
                 <Link
-                  href="/Pawan-Gupta-Resume.pdf"
+                  href="/Sanskriti.pdf"
                   target="_blank"
                   className="mt-6 px-6 py-2 bg-gradient-to-r from-[#00E5FF]/20 to-[#FF1F71]/20 border border-[#00E5FF]/50 rounded-md hover:from-[#00E5FF]/30 hover:to-[#FF1F71]/30 transition-all duration-300 text-white flex items-center"
                 >
