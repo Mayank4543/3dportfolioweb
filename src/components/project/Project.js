@@ -9,30 +9,55 @@ export const metadata = {
     "Explore my portfolio of projects showcasing my skills and expertise",
 };
 
-const projects = [
+export const projects = [
   {
-    id: "project-1",
-    title: "E-Commerce Platform",
+    id: "signal-chat",
+    title: "Signal Chat App",
     description:
-      "A full-stack e-commerce platform built with Next.js, Tailwind CSS, and Stripe integration.",
-    image: "/projects/ecommerce.jpg",
-    tags: ["Next.js", "React", "Tailwind CSS", "Stripe"],
+      "A full-featured chat application with group chat creation, member management, typing indicators, and editable group names, featuring a secure authentication system with JWT tokens.",
+    image: "/projects/alexander-shatov-PEJtZfT6C1Q-unsplash.jpg",
+    tags: ["React JS", "Socket.io", "Express", "MongoDB", "JWT", "Context API"],
+    github: "https://github.com/yourusername/signal-chat",
+    details: [
+      "Implemented a fortified authentication system with advanced encryption using Bcrypt.js and JWT tokens",
+      "Created detailed MongoDB schemas for users, chat rooms, and messages, refining data storage and retrieval",
+      "Built middleware to control access to crucial routes, ensuring secure interactions with sensitive information",
+      "Pioneered real-time communication with Socket.io, enabling instant messaging & responsive chat notifications",
+      "Developed a robust collection of API endpoints for user authentication, chat administration, and messaging",
+      "Utilized the Context API for smooth user experiences and responsive designs",
+    ],
   },
   {
-    id: "project-2",
-    title: "Task Management App",
+    id: "cuddlecloud",
+    title: "CuddleCloud Weather App",
     description:
-      "A responsive task management application with drag-and-drop functionality and user authentication.",
-    image: "/projects/taskapp.jpg",
-    tags: ["React", "Firebase", "Material UI", "DnD"],
+      "A weather application using vanilla JavaScript, HTML, and CSS to provide real-time weather updates with an intuitive, user-friendly interface across all devices.",
+    image: "/projects/dima-solomin-sOU09hnONrQ-unsplash.jpg",
+    tags: ["JavaScript", "HTML", "CSS", "Weather API", "Responsive Design"],
+    github: "https://github.com/yourusername/cuddlecloud",
+    details: [
+      "Created CuddleCloud with vanilla JavaScript, HTML, and CSS for real-time weather updates",
+      "Implemented responsive design for optimal user experience across all device sizes",
+      "Integrated with weather API to fetch and display accurate, up-to-date weather information",
+      "Designed an intuitive, user-friendly interface with smooth animations and transitions",
+      "Built features like location search, forecast view, and weather alerts",
+    ],
   },
   {
-    id: "project-3",
-    title: "Portfolio Website",
+    id: "netflix-clone",
+    title: "Netflix Clone",
     description:
-      "A responsive portfolio website with animated UI elements and modern design principles.",
-    image: "/projects/portfolio.jpg",
-    tags: ["Next.js", "Tailwind CSS", "Three.js", "Animation"],
+      "A responsive Netflix clone using HTML and CSS, replicating the UI/UX with pixel-perfect design and adaptive layouts for various screen sizes.",
+    image: "/projects/abid-shah-GSgGDBJKPiA-unsplash.jpg",
+    tags: ["HTML", "CSS", "Flexbox", "CSS Grid", "Responsive Design"],
+    github: "https://github.com/yourusername/netflix-clone",
+    details: [
+      "Coded a responsive Netflix clone using HTML and CSS, replicating the UI/UX with pixel-perfect design",
+      "Created adaptive layouts for various screen sizes using media queries",
+      "Orchestrated a structured and maintainable CSS framework with Flexbox and Grid",
+      "Implemented seamless content alignment for improved accessibility and user experience",
+      "Built interactive components like carousels, dropdowns, and modals with pure CSS",
+    ],
   },
 ];
 
@@ -94,23 +119,21 @@ export default function Project() {
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a001f]/80 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-80"></div>
-                <div className="absolute inset-0 bg-gray-700 animate-pulse"></div>
-                {/* Placeholder for project images */}
-                {/* <Image 
-                  src={project.image} 
-                  alt={project.title} 
-                  fill 
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
-                /> */}
+                />
               </div>
               <div className="p-6">
                 <h3 className="font-bold text-xl mb-2 bg-gradient-to-r from-[#ff66cc] to-[#66ccff] bg-clip-text text-transparent transition-colors duration-300 group-hover:from-[#66ccff] group-hover:to-[#ff66cc]">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-4 transition-opacity duration-300 group-hover:opacity-80">
+                <p className="text-gray-300 mb-4 transition-opacity duration-300 group-hover:opacity-80 line-clamp-3">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -120,6 +143,19 @@ export default function Project() {
                     </span>
                   ))}
                 </div>
+                {project.github && (
+                  <div className="flex items-center mt-3">
+                    <svg
+                      className="w-5 h-5 mr-2 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    <span className="text-sm text-white">View on GitHub</span>
+                  </div>
+                )}
               </div>
             </Link>
           ))}
