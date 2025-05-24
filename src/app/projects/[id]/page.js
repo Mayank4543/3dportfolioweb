@@ -31,10 +31,12 @@ export default function ProjectDetail({ params }) {
   if (!project) {
     return (
       <div className="min-h-screen bg-[#0a001f] text-white pt-24 px-8 pb-20 sm:px-20">
+        {" "}
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold mb-6">Project Not Found</h1>
           <p className="mb-8">
-            The project you're looking for doesn't exist or has been removed.
+            The project you&apos;re looking for doesn&apos;t exist or has been
+            removed.
           </p>
           <Link
             href="/projects"

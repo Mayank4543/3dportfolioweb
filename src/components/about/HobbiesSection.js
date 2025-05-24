@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -11,27 +11,30 @@ export default function HobbiesSection() {
   const slideshowRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  // Array of slides with titles and descriptions
-  const slides = [
-    {
-      image: "sketch.jpg",
-      title: "Sketching",
-      description:
-        "Expressing ideas visually helps me think more creatively about design solutions.",
-    },
-    {
-      image: "dancing.jpg",
-      title: "Dancing",
-      description:
-        "Movement keeps me energized and helps me approach problems with fresh perspective.",
-    },
-    {
-      image: "reading.jpg",
-      title: "Reading",
-      description:
-        "Books expand my thinking and inspire new approaches to technical challenges.",
-    },
-  ];
+  // Array of slides with titles and descriptions - wrapped in useMemo to prevent re-creation on each render
+  const slides = useMemo(
+    () => [
+      {
+        image: "sketch.jpg",
+        title: "Sketching",
+        description:
+          "Expressing ideas visually helps me think more creatively about design solutions.",
+      },
+      {
+        image: "dancing.jpg",
+        title: "Dancing",
+        description:
+          "Movement keeps me energized and helps me approach problems with fresh perspective.",
+      },
+      {
+        image: "reading.jpg",
+        title: "Reading",
+        description:
+          "Books expand my thinking and inspire new approaches to technical challenges.",
+      },
+    ],
+    []
+  );
 
   // Slideshow cycling logic
   useEffect(() => {
